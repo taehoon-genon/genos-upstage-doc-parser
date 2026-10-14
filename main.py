@@ -7,11 +7,12 @@ from fastapi.responses import JSONResponse, Response
 UPSTAGE_API_URL = os.environ["UPSTAGE_API_URL"]
 UPSTAGE_API_KEY = os.environ.get("UPSTAGE_API_KEY")
 UPSTAGE_MODEL = os.environ.get("UPSTAGE_MODEL")
+
 # Upstage 서버 타임아웃(300초)과 같게 둔다.
 UPSTAGE_TIMEOUT = 300
 
 app = FastAPI()
-client = httpx.AsyncClient(timeout=UPSTAGE_TIMEOUT)
+client = httpx.AsyncClient(timeout=UPSTAGE_TIMEOUT, verify=False)
 
 
 @app.get("/health")
