@@ -9,7 +9,7 @@ import pytest
 import respx
 from fastapi.testclient import TestClient
 
-from app import main
+import main
 
 URL = os.environ["UPSTAGE_API_URL"]
 http = TestClient(main.app)
