@@ -25,7 +25,7 @@ GenOS 코드서빙에 올려 Upstage Document Parser를 부르는 앱이다.
 | 항목 | 값 |
 |---|---|
 | 전처리기 호출 경로 | `/preprocess` |
-| 지원 확장자 | Upstage가 처리하는 형식 |
+| 지원 확장자 | `pdf,docx,ppt,pptx,xlsx,csv,hwp,hwpx,jpg,jpeg,png` |
 | 기본 파라미터 | `{"chunk_size":1000,"chunk_overlap":100}` |
 
 `/preprocess`는 GenOS가 보내는 `{file_path, file_content_base64, params}` 본문을 받는다. 성공하면 `{"code":0,"data":[청크...]}`를 돌려주고, 실패하면 HTTP 200에 `{"code":1,"errMsg":"..."}`를 돌려준다.
